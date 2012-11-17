@@ -1,0 +1,17 @@
+set number
+set autoindent
+set nowrap
+set tabstop=2
+set shiftwidth=2
+set expandtab
+syntax on        "this is needed to see syntax
+set background=dark  "makes it easier to read with black background
+colorscheme ir_black "set theme in ./vim/colors folder
+set ls=2            " allways show status line
+set hlsearch        " highlight searches
+set incsearch       " do incremental searching
+set ruler           " show the cursor position all the time
+set visualbell t_vb=    " turn off error beep/flash
+set ignorecase    
+let &t_Co=256    "ignore case while searching
+call pathogen#infect()

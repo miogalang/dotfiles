@@ -76,6 +76,26 @@ set paste " Fix bad autoindent of pasted text
 set autoindent
 filetype plugin indent on
 
+call pathogen#infect()
+"let NERDTreeShowHidden=1 "show hidden files in nerdtree
+syntax on
+filetype plugin indent on
+
+"Add ir_black scheme to .vim
+set background=dark  "makes it easier to read with black background
+colorscheme ir_black "set theme in ./vim/colors folder
+
+set ls=2            " allways show status line
+set ruler           " show the cursor position all the time
+set ignorecase    
+let &t_Co=256    "ignore case while searching
+
+" Lighten the comment color a little bit
+:hi Comment         guifg=#75715E
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12.00
+
+set virtualedit=all
+set hidden
 set nowrap        " don't wrap lines
 set tabstop=2     " a tab is 2 spaces
 set expandtab

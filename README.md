@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Shiki's .files
 
 Contains configuration files for ZSH, VIM, XCode, Sublime Text, and others.
@@ -41,4 +42,8 @@ Contains configuration files for ZSH, VIM, XCode, Sublime Text, and others.
 
   1. Import `dotfiles/.appcode/settings.jar`
 
+### Mio's DOTFILES
+
+Forked from Shiki
+https://github.com/shiki/dotfiles
 
