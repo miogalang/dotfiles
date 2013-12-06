@@ -81,7 +81,7 @@ call pathogen#infect()
 syntax on
 filetype plugin indent on
 
-"Add ir_black scheme to .vim
+" Add ir_black scheme to .vim
 set background=dark  "makes it easier to read with black background
 colorscheme ir_black "set theme in ./vim/colors folder
 

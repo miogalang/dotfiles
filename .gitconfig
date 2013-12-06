@@ -8,8 +8,8 @@ protocol = https
 [credential]
 helper = /opt/boxen/bin/boxen-git-credential
 [user]
-	name = Shiki
-	email = shikishiji@gmail.com
+	name = Mio
+	email = miguelgalang@gmail.com
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
