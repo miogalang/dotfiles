@@ -21,10 +21,11 @@ export PATH=$PATH:$HOME/Applications/phabricator/arcanist/bin
 # Editor for arcanist
 export EDITOR=/usr/bin/vim
 
-# Ansible 
-pushd $HOME/Applications/ansible >> /dev/null
-source ./hacking/env-setup >> /dev/null
-popd >> /dev/null
+# I do not use ansible
+## Ansible 
+#pushd $HOME/Applications/ansible >> /dev/null
+#source ./hacking/env-setup >> /dev/null
+#popd >> /dev/null
 
 # Cocoapods
 export LC_ALL="en_US.UTF-8"
