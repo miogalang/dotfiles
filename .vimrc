@@ -3,11 +3,11 @@
 set nocompatible
 
 call pathogen#infect()
-"let NERDTreeShowHidden=1 "show hidden files in nerdtree
+let NERDTreeShowHidden=1 "show hidden files in nerdtree
 syntax on
 filetype plugin indent on
 
-"Add ir_black scheme to .vim
+Add ir_black scheme to .vim
 set background=dark  "makes it easier to read with black background
 colorscheme ir_black "set theme in ./vim/colors folder
 
@@ -15,6 +15,10 @@ set ls=2            " allways show status line
 set ruler           " show the cursor position all the time
 set ignorecase    
 let &t_Co=256    "ignore case while searching
+
+call pathogen#helptags()
+
+let mapleader="," " Change <Leader> from \ to ,
 
 " Lighten the comment color a little bit
 :hi Comment         guifg=#75715E
@@ -88,6 +92,20 @@ if has("gui_running")
     set guioptions=egmrt
 endif
 
+" XML folding
+let g:xml_syntax_folding=1
+au FileType xml setlocal foldmethod=syntax
+
+" PHP folding
+let g:php_folding=0
+au FileType php setlocal foldmethod=syntax nofoldenable
+
+" Don't screw up folds when inserting text that might affect them, until
+" leaving insert mode. Foldmethod is local to the window. Protect against
+" screwing up folding when switching between windows.
+" http://vim.wikia.com/wiki/Keep_folds_closed_while_inserting_text
+autocmd InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
+autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:last_fdm | unlet w:last_fdm | endif
 
 " Powerline
 set laststatus=2 "Enable powerline for single buffers (no splits)
@@ -116,6 +134,7 @@ let g:ctrlp_working_path_mode = 'rw'
 " From http://news.ycombinator.com/item?id=4470283
 "let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_user_command = "find %s -type f | egrep -v '/\.(git|hg|svn)|solr|tmp/' | egrep -v '\.(png|exe|jpg|gif|jar|class|swp|swo|log|gitkep|keepme|so|o)$'"
+let g:ctrlp_max_height = 20
 
 " http://stackoverflow.com/a/4800295/246142
 set completeopt+=longest
@@ -149,17 +168,10 @@ let g:neocomplcache_min_syntax_length = 3
 let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 
 " Plugin key-mappings.
-imap <C-k>     <Plug>(neocomplcache_snippets_expand)
-smap <C-k>     <Plug>(neocomplcache_snippets_expand)
 inoremap <expr><C-g>     neocomplcache#undo_completion()
 inoremap <expr><C-l>     neocomplcache#complete_common_string()
 
-" SuperTab like snippets behavior.
-"imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
-
 " Recommended key-mappings.
-" <CR>: close popup and save indent.
-"inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " <C-h>, <BS>: close popup and delete backword char.
@@ -194,9 +206,11 @@ let g:neocomplcache_omni_patterns.php = '[^. \t]->\h\w+\|\h\w*::\h\w\w'
 let g:neocomplcache_omni_patterns.c = '\%(\.\|->\)\h\w*'
 let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 
-" ejs support
 if has("autocmd")
-    au BufRead,BufNewFile *.ejs setfiletype html
+  " ejs support
+  au BufRead,BufNewFile *.ejs setfiletype html
+  " cocoapods
+  au BufNewFile,BufRead Podfile,*.podspec set filetype=ruby
 endif
 
 
@@ -226,15 +240,18 @@ endif
 
 " XPTemplate
 " use <Tab> for completion
-"let g:xptemplate_key = '<Plug>triggerxpt'
-"inoremap <Plug>closePUM <C-v><C-v><BS>
-"imap <TAB> <Plug>closePUM<Plug>triggerxpt
-"let g:xptemplate_fallback = 'nore:<TAB>' " Optional. Use this only when you have no other plugin like SuperTab to handle <TAB>.
+let g:xptemplate_key = '<Plug>triggerxpt'
+inoremap <Plug>closePUM <C-v><C-v><BS>
+imap <TAB> <Plug>closePUM<Plug>triggerxpt
+let g:xptemplate_fallback = 'nore:<TAB>' " Optional. Use this only when you have no other plugin like SuperTab to handle <TAB>.
+
+let g:xptemplate_key_pum_only = '<S-Tab>'
 
 " No spaces (this doesn't seem to work)
 " let g:xptemplate_vars = "SParg=''"
 
 " break after opening function/class braces
 let g:xptemplate_vars = "BRfun=\n"
+
 
 

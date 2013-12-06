@@ -18,7 +18,7 @@ ZSH_THEME="risto"
 # CASE_SENSITIVE="true"
 
 # Comment this out to disable weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="true"
 
 # Uncomment following line if you want to disable colors in ls
 # DISABLE_LS_COLORS="true"
@@ -35,7 +35,6 @@ ZSH_THEME="risto"
 plugins=(git vi-mode npm osx redis-cli gem)
 
 source $ZSH/oh-my-zsh.sh
-source $DOTFILES/.exports
 
 # Z (https://github.com/rupa/z)
 export _Z_DATA=$HOME/.z-data
@@ -48,5 +47,6 @@ function server() {
   python -m SimpleHTTPServer "$port"
 }
 
-# Load other stuffs
-source $HOME/.extra
+# Disable gm alias cause it conflicts with graphicsmagick
+disable -a gm
+
