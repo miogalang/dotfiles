@@ -77,7 +77,7 @@ set autoindent
 filetype plugin indent on
 
 call pathogen#infect()
-"let NERDTreeShowHidden=1 "show hidden files in nerdtree
+let NERDTreeShowHidden=1 "show hidden files in nerdtree
 syntax on
 filetype plugin indent on
 
@@ -89,6 +89,9 @@ set ls=2            " allways show status line
 set ruler           " show the cursor position all the time
 set ignorecase    
 let &t_Co=256    "ignore case while searching
+call pathogen#helptags()
+
+let mapleader="," " Change <Leader> from \ to ,
 
 " Lighten the comment color a little bit
 :hi Comment         guifg=#75715E
