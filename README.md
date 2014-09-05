@@ -1,12 +1,7 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-## Shiki's .files
-=======
 ### Mio's DOTFILES
 
 Forked from Shiki
 https://github.com/shiki/dotfiles
->>>>>>> ad46c8822f77a4241b48430aaa6a127c15862db6
 
 Contains configuration files for ZSH, VIM, XCode, Sublime Text, and others.
 
