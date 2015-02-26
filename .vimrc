@@ -21,7 +21,7 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'chase/vim-ansible-yaml'
 Bundle 'd11wtq/ctrlp_bdelete.vim'
 Bundle 'elzr/vim-json'
-Bundle 'fatih/vim-go'
+" Bundle 'fatih/vim-go'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
 Bundle 'majutsushi/tagbar'
@@ -139,7 +139,7 @@ set wildignore+=*.egg-info/**
 set grepprg=ack         " replace the default grep program with ack
 
 " Monokai theme
-colorscheme molokai
+" colorscheme molokai
 
 set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12.00
 
