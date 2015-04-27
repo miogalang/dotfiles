@@ -50,3 +50,5 @@ function server() {
 # Disable gm alias cause it conflicts with graphicsmagick
 disable -a gm
 
+PHP_AUTOCONF="/usr/local/bin/autoconf"
+source ~/.bash_aliases

@@ -1,41 +1,42 @@
-# Load Boxen
-[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
+## Load Boxen
+#[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
+#
+## Set default Node version
+#export BOXEN_NVM_DEFAULT_VERSION=v0.10.31
 
-# Set default Node version
-export BOXEN_NVM_DEFAULT_VERSION=v0.10.31
-
+export PATH=/usr/local/sbin:$PATH
 export PATH=/usr/local/bin:$PATH
 
-# PHP
-export PATH="$(brew --prefix josegonzalez/php/php55)/bin:$PATH"
-
-# Android SDK
-#export ANDROID_HOME=$HOME/Applications/adt/sdk
-#export PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools/19.1.0
-
-# EC2
-export JAVA_HOME=`/usr/libexec/java_home`
-export EC2_HOME=/opt/boxen/homebrew/Cellar/ec2-api-tools/1.6.7/jars
-export PATH=/opt/boxen/homebrew/Cellar/ec2-api-tools/1.6.7/bin:$PATH
-
-# Phabricator / Arcanist
-export PATH=$PATH:/Applications/phabricator/arcanist/bin
-
-# Editor for arcanist
-export EDITOR=/usr/bin/vim
-
-## Ansible 
-pushd $HOME/Applications/ansible >> /dev/null
-source ./hacking/env-setup >> /dev/null
-popd >> /dev/null
-
-## Cocoapods
-export LC_ALL="en_US.UTF-8"
-
-## Composer
-export PATH=~/workspace/lifebit/workspace/vendor/bin:$PATH
-# Go GOROOT bin
-#export PATH=$PATH:/opt/boxen/homebrew/Cellar/go/1.3/libexec/bin
-# Default GOPATH
-#export GOPATH=$HOME/Projects/gopath
-#export PATH=$PATH:$GOPATH/bin
+## PHP
+export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
+#
+## Android SDK
+##export ANDROID_HOME=$HOME/Applications/adt/sdk
+##export PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools/19.1.0
+#
+## EC2
+#export JAVA_HOME=`/usr/libexec/java_home`
+#export EC2_HOME=/opt/boxen/homebrew/Cellar/ec2-api-tools/1.6.7/jars
+#export PATH=/opt/boxen/homebrew/Cellar/ec2-api-tools/1.6.7/bin:$PATH
+#
+## Phabricator / Arcanist
+#export PATH=$PATH:/Applications/phabricator/arcanist/bin
+#
+## Editor for arcanist
+#export EDITOR=/usr/bin/vim
+#
+### Ansible 
+#pushd $HOME/Applications/ansible >> /dev/null
+#source ./hacking/env-setup >> /dev/null
+#popd >> /dev/null
+#
+### Cocoapods
+#export LC_ALL="en_US.UTF-8"
+#
+### Composer
+#export PATH=~/workspace/lifebit/workspace/vendor/bin:$PATH
+## Go GOROOT bin
+##export PATH=$PATH:/opt/boxen/homebrew/Cellar/go/1.3/libexec/bin
+## Default GOPATH
+##export GOPATH=$HOME/Projects/gopath
+##export PATH=$PATH:$GOPATH/bin

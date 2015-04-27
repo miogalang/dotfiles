@@ -217,7 +217,7 @@ let g:ctrlp_match_window = 'bottom,min:1,max:20,results:50'
 
 " CtrlP BDelete
 " Add a setting in CtrlP. Integrate functionality to delete buffers
-call ctrlp_bdelete#init()
+" call ctrlp_bdelete#init()
 
 " vim-json
 " Disable quote-concealment
