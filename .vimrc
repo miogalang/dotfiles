@@ -74,7 +74,7 @@ set paste " Fix bad autoindent of pasted text
  
 " Enable auto-indentation
 set autoindent
-filetype plugin indent on
+" filetype plugin indent on
 
 call pathogen#infect()
 let NERDTreeShowHidden=1 "show hidden files in nerdtree

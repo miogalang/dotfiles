@@ -47,6 +47,13 @@ function server() {
   python -m SimpleHTTPServer "$port"
 }
 
+# Correct commands only not parameters
+unsetopt correct_all  
+setopt correct
+
+# Add reverse search
+bindkey "^R" history-incremental-search-backward
+
 # Disable gm alias cause it conflicts with graphicsmagick
 disable -a gm
 

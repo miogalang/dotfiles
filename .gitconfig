@@ -3,13 +3,14 @@
 protocol = https
 
 [core]
-	excludesfile = /opt/boxen/config/git/gitignore
+	excludesfile = /Users/mgalang/.gitignore
+	editor = /usr/bin/vim
 
 [credential]
 helper = /opt/boxen/bin/boxen-git-credential
 [user]
-	name = Mio
-	email = miguelgalang@gmail.com
+	name = Mio Miguel Galang
+	email = mgalang@zendesk.com
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -18,3 +19,22 @@ helper = /opt/boxen/bin/boxen-git-credential
 	trustExitCode = true
 [color]
 	ui = true
+#[merge]
+#	tool = mymeld
+#	conflictstyle = diff3
+#[mergetool "mymeld"]
+#  cmd = meld --diff $BASE $LOCAL --diff $BASE $REMOTE --auto-merge $LOCAL $BASE $REMOTE --output $MERGED
+#  cmd = meld --diff $BASE $LOCAL --diff $BASE $REMOTE --diff $LOCAL $BASE $REMOTE $MERGE
+#  cmd = meld --diff $BASE $LOCAL --diff $BASE $REMOTE --diff $LOCAL $BASE $REMOTE --output $MERGED
+#  cmd = meld $BASE $LOCAL $MERGED $REMOTE
+#[diff]
+#	tool = meld
+[alias]
+  co = checkout
+  ci = commit
+  st = status
+  br = branch
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  type = cat-file -t
+  dump = cat-file -p
+  

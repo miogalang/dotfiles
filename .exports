@@ -6,9 +6,12 @@
 
 export PATH=/usr/local/sbin:$PATH
 export PATH=/usr/local/bin:$PATH
+export PATH=~/.composer/vendor/bin:$PATH
 
 ## PHP
 export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
+#export PATH="$(brew --prefix homebrew/php/php55)/bin:$PATH"
+#export PATH="$(brew --prefix josegonzalez/php/php56)/bin:$PATH"
 #
 ## Android SDK
 ##export ANDROID_HOME=$HOME/Applications/adt/sdk
