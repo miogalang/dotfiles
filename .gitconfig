@@ -3,14 +3,14 @@
 protocol = https
 
 [core]
-	excludesfile = /Users/mgalang/.gitignore
+	excludesfile = /Users/mgalang/.gitignore_global
 	editor = /usr/bin/vim
 
 [credential]
-helper = /opt/boxen/bin/boxen-git-credential
+	helper = /opt/boxen/bin/boxen-git-credential
 [user]
 	name = Mio Miguel Galang
-	email = mgalang@zendesk.com
+	email = miguelgalang@gmail.com 
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -30,11 +30,11 @@ helper = /opt/boxen/bin/boxen-git-credential
 #[diff]
 #	tool = meld
 [alias]
-  co = checkout
-  ci = commit
-  st = status
-  br = branch
-  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-  type = cat-file -t
-  dump = cat-file -p
+	  co = checkout
+	  ci = commit
+	  st = status
+	  br = branch
+	  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	  type = cat-file -t
+	  dump = cat-file -p
   

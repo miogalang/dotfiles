@@ -15,5 +15,6 @@ alias nginx.logs.phpmyadmin.error='tail -250f /usr/local/etc/nginx/logs/phpmyadm
 alias nginx.logs.phpmyadmin.access='tail -250f /usr/local/etc/nginx/logs/phpmyadmin.access.log'
 alias use_php55="brew unlink php56 && brew unlink php55 && brew link php55"
 alias use_php56="brew unlink php56 && brew unlink php55 && brew link php56"
-alias git_clean="git branch --merged master | grep -v \"\* master\" | xargs -n 1 git branch -d"
+alias git_clean="git co master && git pull && git branch --merged master | grep -v \"\* master\" | xargs -n 1 git branch -d"
+alias homestead='function __homestead() { (cd ~/Homestead && vagrant $*); unset -f __homestead; }; __homestead'
 
