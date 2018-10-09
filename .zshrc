@@ -1,19 +1,5 @@
 DOTFILES=$HOME/.files
 
-# Path to your oh-my-zsh configuration.
-ZSH=$DOTFILES/.oh-my-zsh
-
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-#ZSH_THEME="robbyrussell"
-ZSH_THEME="geoffgarside"
-
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
@@ -29,24 +15,6 @@ DISABLE_AUTO_UPDATE="true"
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 # COMPLETION_WAITING_DOTS="true"
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git vi-mode npm osx redis-cli gem)
-
-source $ZSH/oh-my-zsh.sh
-
-# Z (https://github.com/rupa/z)
-export _Z_DATA=$HOME/.z-data
-. $DOTFILES/.z/z.sh
-
-# Server
-function server() {
-  local port="${1:-8000}"
-  open "http://localhost:${port}/"
-  python -m SimpleHTTPServer "$port"
-}
-
 # Correct commands only not parameters
 unsetopt correct_all  
 setopt correct
@@ -54,8 +22,33 @@ setopt correct
 # Add reverse search
 bindkey "^R" history-incremental-search-backward
 
-# Disable gm alias cause it conflicts with graphicsmagick
-disable -a gm
-
-PHP_AUTOCONF="/usr/local/bin/autoconf"
 source ~/.bash_aliases
+
+## SSH Autocomplete snippet
+# source: https://serverfault.com/a/170481
+h=()
+if [[ -r ~/.ssh/config ]]; then
+  h=($h ${${${(@M)${(f)"$(cat ~/.ssh/config)"}:#Host *}#Host }:#*[*?]*})
+fi
+if [[ -r ~/.ssh/known_hosts ]]; then
+  h=($h ${${${(f)"$(cat ~/.ssh/known_hosts{,2} || true)"}%%\ *}%%,*}) 2>/dev/null
+fi
+if [[ $#h -gt 0 ]]; then
+  zstyle ':completion:*:ssh:*' hosts $h
+  zstyle ':completion:*:slogin:*' hosts $h
+fi
+
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+# ZDI
+# Customize to your needs...
+
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
+source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
+# BEGIN DOCKER-IMAGES
+source /Users/17083-mgalang/Code/zendesk/docker-images/dockmaster/zdi.sh
+# END DOCKER-IMAGES
