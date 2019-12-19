@@ -50,5 +50,5 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
 source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
 # BEGIN DOCKER-IMAGES
-source /Users/17083-mgalang/Code/zendesk/docker-images/dockmaster/zdi.sh
+source /Users/17083-mgalang/Code/zendesk/zdi/dockmaster/zdi.sh
 # END DOCKER-IMAGES

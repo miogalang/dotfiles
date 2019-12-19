@@ -64,4 +64,8 @@ function homestead() {
 
 ## Docker
 export DEDICATED_DOCKER_DISK=1
-## Homestead
+
+## Zendesk SSH
+export SSH_USER=mgalang
+
+export zendesk_yml_path=/Users/17083-mgalang/Code/zendesk/zendesk_browser_tests/config/zendesk.yml
